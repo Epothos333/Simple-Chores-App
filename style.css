@@ -1,3 +1,15 @@
-body {
-  text-align: Center;
+.rightButton {
+  float: right;
+  margin: 0 5px;
+  bottom: 2px;
+  position: relative;
+}
+li {
+  border-radius: 4px;
+  margin: 15px 0;
+  box-shadow: 5px 5px 10px #90ee90;
+  height: 50px;
+}
+p {
+  display: inline;
 }
