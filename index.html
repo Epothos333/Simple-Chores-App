@@ -1,0 +1,32 @@
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body ng-app='toDoListModule'>
+	<div ng-controller="listController as main">
+		<h1> Create Your Own To-Do List </h1>
+
+		<ol class='lists'>
+			<li ng-repeat="item in main.listItems | filter: filteredItems track by $index">{{item}}<button ng-click='main.removeItem($index)'>X</button></li>
+		</ol>
+		
+
+
+		<input id="toDoInput" type='text' ng-model="main.toDoThing" placeholder="What do you need to do?"/>
+		<button ng-click='main.adding()'>Add Thing To Do!</button>
+		<input id="filterInput" type='text' ng-model='filteredItems' placeHolder="filter your list"/>
+
+
+
+
+	</div>
+
+
+
+
+
+	<script type="text/javascript" src="angular.min.js"></script>
+	<script type="text/javascript" src='app.js'></script>
+</body>
+</html>
