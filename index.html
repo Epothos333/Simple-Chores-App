@@ -15,7 +15,7 @@
 						
 						<div class='choreBox' ng-repeat="item in main.listItems | filter: filteredItems track by $index">
 
-							<h4>{{item.item}}</h4> 
+							<h5>{{item.item}}</h5> 
 
 							<button type='button' class='btn btn-danger rightButton' ng-click='main.removeItem($index)'>Remove</button>
 
@@ -28,13 +28,16 @@
 					
 
 					
+					<form>
+						<input class="makeBlock someMargin" id="toDoInput" type='text' ng-model="main.toDoThing" placeholder="Task"/>
+						<input class="makeBlock someMargin" id="choreDate" type='date' ng-model='main.date'/>
+						<input class="makeBlock someMargin" id="choreTime" type='text' ng-model='main.times' placeholder="Due Time"/>
+						<input class="makeBlock someMargin" id="choreNotes" type='text' placeholder="Notes" ng-model='main.notes' />
 
+						<button ng-click='main.adding()'>Add Thing To Do!</button>
+						<input class="makeBlock someMargin" id="filterInput" type='text' ng-model='filteredItems' placeHolder="Search"/>
+					</form>
 
-					<input id="toDoInput" type='text' ng-model="main.toDoThing" placeholder="What do you need to do?"/>
-					<input id="choreDetail" type='text' ng-model="main.detailInfo" placeholder="Write the details here" />
-
-					<button ng-click='main.adding()'>Add Thing To Do!</button>
-					<input id="filterInput" type='text' ng-model='filteredItems' placeHolder="filter your list"/>
 				</div>
 				<div class='col-xs-3'>
 					<p id='detail'></p>
